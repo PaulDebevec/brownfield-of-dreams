@@ -4,6 +4,7 @@ FactoryBot.define do
     first_name { Faker::Creature::Dog.name }
     last_name { Faker::Artist.name }
     password { Faker::Color.color_name }
+    token { ENV['GITHUB_TOKEN_1'] }
     role { :default }
   end
 
