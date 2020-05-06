@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
-  def show; end
+  def show
+    repositories = Faraday.new(url: "https://api.github.com") do |faraday|
+      faraday.headers["X-API-KEY"] = ENV["GITHUB_TOKEN_1"]
+    end
+
+    response = repositories.get("/user/repos?access_token=#{ENV['GITHUB_TOKEN_1']}")
+    @top_5_repos = JSON.parse(response.body, symbolize_names: true)[0..4]
+  end
 
   def new
     @user = User.new
@@ -15,6 +22,9 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+
+
 
   private
 
