@@ -24,4 +24,10 @@
       <p class="follower-name"><%= link_to follower[:login], follower[:html_url] %></p>
     <% end %>
   </section>
+
+  <section class="following">
+    <% @all_following.each do |following| %>
+      <p class="following-name"><%= link_to following[:login], following[:html_url] %></p>
+    <% end %>
+  </section>
 </section>
