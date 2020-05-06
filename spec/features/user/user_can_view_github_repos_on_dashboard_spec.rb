@@ -13,7 +13,7 @@ feature "user can view 5 github repos on their dashboard" do
 
     expect(page).to have_content("GitHub")
     within(first(".repos")) do
-      expect(page).to have_css(".name")
+      expect(page).to have_css(".repo-name")
       expect(page).to have_link("brownfield-of-dreams")
     end
   end
