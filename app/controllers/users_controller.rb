@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     followers = service.get("/user/followers?access_token=#{ENV['GITHUB_TOKEN_1']}")
     @all_followers = JSON.parse(followers.body, symbolize_names: true)
 
+    following = service.get("/user/following?access_token=#{ENV['GITHUB_TOKEN_1']}")
+    @all_following = JSON.parse(following.body, symbolize_names: true)
   end
 
   def new
