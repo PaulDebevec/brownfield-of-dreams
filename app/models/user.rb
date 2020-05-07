@@ -7,4 +7,10 @@ class User < ApplicationRecord
   validates_presence_of :token
   enum role: { default: 0, admin: 1 }
   has_secure_password
+
+  def top_5_repos
+    search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
+    @top_5_repos = search.repositories
+    @top_5_repos
+  end
 end
