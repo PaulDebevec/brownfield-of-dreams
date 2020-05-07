@@ -19,4 +19,10 @@ class User < ApplicationRecord
     @all_followers = search.followers
     @all_followers
   end
+
+  def all_following
+    search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
+    @all_following = search.following
+    @all_following
+  end
 end

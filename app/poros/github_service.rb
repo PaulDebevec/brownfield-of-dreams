@@ -6,6 +6,11 @@ class GithubService
   def follower_data
     @follower_data ||= get_json("/user/followers?access_token=#{ENV['GITHUB_TOKEN_1']}")
   end
+
+  def following_data
+    @following_data ||= get_json("/user/following?access_token=#{ENV['GITHUB_TOKEN_1']}")
+  end
+
   private
   def get_json(url)
     response = conn.get(url)
