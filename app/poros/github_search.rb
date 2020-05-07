@@ -10,4 +10,10 @@ class GithubSearch
     end
     @repositories[0..4]
   end
+
+  def followers
+    @followers ||= @github_service.follower_data.map do |follower_params|
+      Follower.new({login: follower_params['login'], html_url: follower_params['html_url']})
+    end
+  end
 end

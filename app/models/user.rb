@@ -13,4 +13,10 @@ class User < ApplicationRecord
     @top_5_repos = search.repositories
     @top_5_repos
   end
+
+  def all_followers
+    search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
+    @all_followers = search.followers
+    @all_followers
+  end
 end
