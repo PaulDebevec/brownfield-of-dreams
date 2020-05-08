@@ -9,27 +9,30 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
-  </section>
-</section>
+  </section><br>
 
 
 <section class="github">
   <h1>GitHub</h1>
+  <h4>Repositories</h4>
   <section class="repos">
-  <% @top_5_repos[0..4].each do |repo|%>
-    <p class="repo-name"><%= link_to repo[:name], repo[:html_url] %></p>
+  <% current_user.top_5_repos.each do |repo|%>
+    <p class="repo-name"><%= link_to repo.name, repo.repo_url %></p>
   <% end %>
-  </section>
+  </section><br>
 
   <section class="followers">
-    <% @all_followers.each do |follower| %>
-      <p class="follower-name"><%= link_to follower[:login], follower[:html_url] %></p>
+    <h4>Followers</h4>
+    <% current_user.all_followers.each do |follower| %>
+      <p class="follower-name"><%= link_to follower.name, follower.html_url %></p>
     <% end %>
-  </section>
+  </section><br>
 
   <section class="following">
-    <% @all_following.each do |following| %>
-      <p class="following-name"><%= link_to following[:login], following[:html_url] %></p>
+    <h4>Following</h4>
+    <% current_user.all_following.each do |following| %>
+      <p class="following-name"><%= link_to following.name, following.html_url %></p>
     <% end %>
   </section>
+</section>
 </section>
