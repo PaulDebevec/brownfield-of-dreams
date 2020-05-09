@@ -4,7 +4,6 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-    #This is where I will put all of my goodies for now
   end
 
   def import
