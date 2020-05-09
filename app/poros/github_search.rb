@@ -19,7 +19,7 @@ class GithubSearch
 
   def following
     @following ||= @github_service.following_data.map do |following_params|
-      Following.new({name: following_params['name'], html_url: following_params['html_url']})
+      Following.new({name: following_params['login'], html_url: following_params['html_url']})
     end
   end
 end
