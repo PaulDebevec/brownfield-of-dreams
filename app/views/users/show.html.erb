@@ -11,28 +11,31 @@
     <h1>Bookmarked Segments</h1>
   </section><br>
 
-
-<section class="github">
-  <h1>GitHub</h1>
-  <h4>Repositories</h4>
-  <section class="repos">
-  <% current_user.top_5_repos.each do |repo|%>
-    <p class="repo-name"><%= link_to repo.name, repo.repo_url %></p>
-  <% end %>
-  </section><br>
-
-  <section class="followers">
-    <h4>Followers</h4>
-    <% current_user.all_followers.each do |follower| %>
-      <p class="follower-name"><%= link_to follower.name, follower.html_url %></p>
+<% if current_user.token == "No Key" %>
+  <%= link_to "Connect to Github", github_login_path, class: "video-position-submit btn btn-outline" %>
+<% else %>
+  <section class="github">
+    <h1>GitHub</h1>
+    <h4>Repositories</h4>
+    <section class="repos">
+    <% current_user.top_5_repos.each do |repo|%>
+      <p class="repo-name"><%= link_to repo.name, repo.repo_url %></p>
     <% end %>
-  </section><br>
+    </section><br>
 
-  <section class="following">
-    <h4>Following</h4>
-    <% current_user.all_following.each do |following| %>
-      <p class="following-name"><%= link_to following.name, following.html_url %></p>
-    <% end %>
+    <section class="followers">
+      <h4>Followers</h4>
+      <% current_user.all_followers.each do |follower| %>
+        <p class="follower-name"><%= link_to follower.name, follower.html_url %></p>
+      <% end %>
+    </section><br>
+
+    <section class="following">
+      <h4>Following</h4>
+      <% current_user.all_following.each do |following| %>
+        <p class="following-name"><%= link_to following.name, following.html_url %></p>
+      <% end %>
+    </section>
   </section>
-</section>
+  <% end %>
 </section>
