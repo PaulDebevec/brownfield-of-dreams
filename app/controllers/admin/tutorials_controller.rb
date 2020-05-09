@@ -8,20 +8,41 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def import
-    # service = Faraday.get(url: "https://www.googleapis.com/youtube/v3/") do |faraday|
-    #   faraday.params["part"] = "contentDetails"
-    #   faraday.params["playlistId"] = params[:playlist_id]
-    #   faraday.params["key"] = ENV["YOUTUBE_API_KEY"]
-
       service = Faraday.new(url: "https://www.googleapis.com")
-      videos = service.get("/youtube/v3/playlistItems?part=contentDetails&playlistId=#{params[:playlist_id]}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=20")
-      @videos = JSON.parse(videos.body, symbolize_names: true)
-      binding.pry
-      @videos = @videos[:items].map {|video| video[:contentDetails][:videoId]}
-        binding.pry
+      # videos = service.get("/youtube/v3/playlistItems?part=contentDetails&playlistId=#{params[:playlist_id]}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=20")
+      videos = service.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{params[:playlist_id]}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50")
+      playlist_info = service.get("/youtube/v3/playlists?part=snippet&id=#{params[:playlist_id]}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50")
+      @videos_raw = JSON.parse(videos.body, symbolize_names: true)
+      @playlist = JSON.parse(playlist_info.body, symbolize_names: true)
 
-    # repositories = service.get("/user/repos?access_token=#{ENV['GITHUB_TOKEN_1']}")
-    # @top_5_repos = JSON.parse(repositories.body, symbolize_names: true)[0..4]
+      playlist_data = Hash.new
+      
+      playlist_data["title"] = @playlist[:items].first[:snippet][:title]
+      playlist_data["description"] = @playlist[:items].first[:snippet][:description]
+      playlist_data["thumbnail"] =  @playlist[:items].first[:snippet][:thumbnails][:standard][:url]
+      playlist_data["playlist_id"] = @playlist[:items].first[:id]
+      playlist_data["classroom"] = false
+
+      @new_playlist = Tutorial.new(playlist_data)
+
+      if @new_playlist.save
+
+        @videos_raw[:items].each_with_index do |video, index|
+          video_data = Hash.new
+          video_data["title"] = video[:snippet][:title]
+          video_data["description"] = video[:snippet][:description]
+          video_data["video_id"] =  video[:snippet][:resourceId][:videoId]
+          video_data["thumbnail"] = video[:snippet][:thumbnails][:medium][:url]
+          video_data["position"] = (index+1)
+          @new_playlist.videos.create!(video_data)
+        end
+
+        flash[:success] = "Successfully created tutorial #{view_context.link_to 'View it here', "/tutorials/#{@new_playlist.id}"}"
+        redirect_to admin_dashboard_path
+      else
+        flash[:error] = "Something went wrong, try again"
+        redirect_to "/admin/tutorials/import"
+      end
   end
 
   def new
