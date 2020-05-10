@@ -4,6 +4,18 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
+    @tutorial = Tutorial.new(tutorial_params)
+    if @tutorial.save && @tutorial.valid_thumbnail?
+      flash[:success] = "Successfully created tutorial."
+      redirect_to "/tutorials/#{@tutorial.id}"
+    else
+      flash.now[:error] = @tutorial.errors.full_messages.to_sentence
+      flash.now[:error] = "Thumbail must be a .JPG, .GIF, .BMP, or .PNG" if !@tutorial.valid_thumbnail?
+      render :new
+    end
+  end
+
+  def new_import
   end
 
   def import
@@ -24,6 +36,7 @@ class Admin::TutorialsController < Admin::BaseController
         playlist_data["thumbnail"] =  @playlist[:items].first[:snippet][:thumbnails][:standard][:url]
         playlist_data["playlist_id"] = @playlist[:items].first[:id]
         playlist_data["classroom"] = false
+        playlist_data["description"] = "No Description Available" if playlist_data["description"] = ""
 
         @new_playlist = Tutorial.create!(playlist_data)
 
@@ -62,6 +75,6 @@ class Admin::TutorialsController < Admin::BaseController
   private
 
   def tutorial_params
-    params.require(:tutorial).permit(:tag_list)
+    params.require(:tutorial).permit(:title, :description, :thumbnail, :tag_list)
   end
 end

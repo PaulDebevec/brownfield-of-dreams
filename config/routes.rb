@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   namespace :admin do
-    get "/tutorials/import", to: 'tutorials#create'
+    get "/tutorials/import", to: 'tutorials#new_import'
     post "/tutorials/import", to: 'tutorials#import'
     get "/dashboard", to: "dashboard#show"
     resources :tutorials, only: [:create, :edit, :update, :destroy, :new] do
