@@ -12,6 +12,7 @@
   </tr>
   <% @facade.tutorials.each do |tutorial| %>
     <tr class="admin-tutorial-card">
+      <section id="tutorial-<%= tutorial.id %>">
       <td><%= link_to tutorial.title, tutorial_path(tutorial) %></td>
       <td>
         <%= link_to "Edit", edit_admin_tutorial_path(tutorial) %> |
@@ -19,6 +20,7 @@
                                method: :delete,
                                data: { confirm: 'Are you sure?' } %>
       </td>
+      </section>
     </tr>
   <% end %>
 </table>
