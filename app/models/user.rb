@@ -8,6 +8,15 @@ class User < ApplicationRecord
   enum role: { default: 0, admin: 1 }
   has_secure_password
 
+  def bookmarks_list
+    Video.select('videos.*, tutorials.id as tutorial_id, user_videos.user_id')
+      .joins(:tutorial)
+      .joins(:user_videos)
+      .where(user_videos: {user_id: self.id})
+      .order(:tutorial_id)
+      .order(:position)
+  end
+
   def top_5_repos
     search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
     @top_5_repos = search.repositories
