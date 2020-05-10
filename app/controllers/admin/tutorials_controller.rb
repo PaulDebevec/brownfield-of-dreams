@@ -5,17 +5,17 @@ class Admin::TutorialsController < Admin::BaseController
 
   def create
     @tutorial = Tutorial.new(tutorial_params)
-    if @tutorial.save
+    if @tutorial.save && @tutorial.valid_thumbnail?
       flash[:success] = "Successfully created tutorial."
       redirect_to "/tutorials/#{@tutorial.id}"
     else
       flash.now[:error] = @tutorial.errors.full_messages.to_sentence
+      flash.now[:error] = "Thumbail must be a .JPG, .GIF, .BMP, or .PNG" if !@tutorial.valid_thumbnail?
       render :new
     end
   end
 
   def new_import
-
   end
 
   def import
