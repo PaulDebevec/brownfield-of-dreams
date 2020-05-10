@@ -1,0 +1,7 @@
+<h2>Import Playlist</h2>
+<%= form_tag '/admin/tutorials/import', method: :post do |f| %>
+  <%= label_tag :playlist_id, "Playlist ID" %>
+  <%= text_field_tag :playlist_id%>
+
+  <%= submit_tag "Import Playlist" %>
+<% end %>
