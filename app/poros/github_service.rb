@@ -1,14 +1,18 @@
 class GithubService
+  def initialize(token)
+    @token = token
+  end
+
   def repository_data
-    @repository_data ||= get_json("/user/repos?access_token=#{ENV['GITHUB_TOKEN_1']}")
+    @repository_data ||= get_json("/user/repos?access_token=#{@token}")
   end
 
   def follower_data
-    @follower_data ||= get_json("/user/followers?access_token=#{ENV['GITHUB_TOKEN_1']}")
+    @follower_data ||= get_json("/user/followers?access_token=#{@token}")
   end
 
   def following_data
-    @following_data ||= get_json("/user/following?access_token=#{ENV['GITHUB_TOKEN_1']}")
+    @following_data ||= get_json("/user/following?access_token=#{@token}")
   end
 
   private
