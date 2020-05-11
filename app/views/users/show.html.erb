@@ -31,7 +31,7 @@
       <% current_user.all_followers(current_user.token).each do |follower| %>
         <p class="follower-name"><%= link_to follower.name, follower.html_url %></p>
         <% if current_user.token != "No Key" && !User.has_account?(follower.name).nil?%>
-            <%= link_to "Add as Friend", "/friends/new", method: 'post'%>
+            <%= link_to "Add as Friend", friends_new_path(:login => "#{follower.name}"), method: 'post'%>
         <%end%>
     <%end%>
     </section><br>
