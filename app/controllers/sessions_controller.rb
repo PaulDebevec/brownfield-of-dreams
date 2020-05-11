@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def update
     user_info = request.env['omniauth.auth']
+    binding.pry
     current_user.update_column(:token, user_info[:credentials][:token])
     redirect_to '/dashboard'
   end
