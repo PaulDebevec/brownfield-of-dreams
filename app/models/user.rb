@@ -34,4 +34,8 @@ class User < ApplicationRecord
     @all_following = search.following
     @all_following
   end
+
+  def has_account?(followers_email)
+    User.find_by(email: followers_email)
+  end
 end
