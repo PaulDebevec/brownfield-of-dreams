@@ -1,36 +1,35 @@
-# require 'rails_helper'
-#
-# RSpec.describe "As a logged in user " , type: :feature do
-#   describe "When I connect through github " do
-#     before(:each) do
-#       OmniAuth.config.test_mode = true
-#       OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
-#         { "provider" => "github",
-#           "info"=> {"name"=> "Alexis Dumortier"},
-#           "credentials" =>
-#             { "token"=> ENV["GITHUB_USER1_TOKEN"],
-#               "expires" => false},
-#           "extra" =>
-#               {"raw_info" =>
-#                 { "login" => "adumortier",
-#                   "html_url" => "https://github.com/adumortier",
-#                   "name"=> "Alexis Dumortier",
-#                 }
-#               }
-#         }
-#       )
-#     end
-#
-#     it "it generates a token for my user" do
-#       VCR.use_cassette('/user/user_can_authenticate_through_github') do
-#         user1_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password: 'temp', role: 0}
-#         user1 = User.create!(user1_params)
-#         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
-#         visit "/dashboard"
-#         click_on "Connect to Github"
-#         expect(user1.token).to eq(ENV["GITHUB_USER1_TOKEN"])
-#       end
-#     end
-#   end
-# end
-#
+require 'rails_helper'
+
+RSpec.describe "As a logged in user" , type: :feature do
+  describe "when I click connect with github" do
+    before(:each) do
+      OmniAuth.config.test_mode = true
+      OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
+        { "provider" => "github",
+          "info"=> {"name"=> "Paul Debevec"},
+          "credentials" =>
+            { "token"=> ENV["GITHUB_TOKEN_1"],
+              "expires" => false},
+          "extra" =>
+              {"raw_info" =>
+                { "login" => "pauldebevec",
+                  "html_url" => "https://github.com/pauldebevec",
+                  "name"=> "Paul Debevec",
+                }
+              }
+        }
+      )
+    end
+
+    it "My github key is saved to my user" do
+      VCR.use_cassette('github_authentication') do
+        user_params = {email: 'paulmdebevec@gmail.com', first_name: 'Paul', last_name: 'Debevec', password: 'password', role: 0}
+        user = User.create!(user_params)
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        visit "/dashboard"
+        click_on "Connect to Github"
+        expect(user.token).to eq(ENV["GITHUB_TOKEN_1"])
+      end
+    end
+  end
+end
