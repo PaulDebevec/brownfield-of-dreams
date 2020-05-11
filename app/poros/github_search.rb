@@ -1,7 +1,7 @@
 class GithubSearch
   def initialize(token)
     @token = token
-    @github_service = GithubService.new
+    @github_service = GithubService.new(token)
   end
 
   def repositories

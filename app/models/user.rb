@@ -17,20 +17,20 @@ class User < ApplicationRecord
       .order(:position)
   end
 
-  def top_5_repos
-    search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
+  def top_5_repos(token)
+    search ||= GithubSearch.new(token)
     @top_5_repos = search.repositories
     @top_5_repos
   end
 
-  def all_followers
-    search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
+  def all_followers(token)
+    search ||= GithubSearch.new(token)
     @all_followers = search.followers
     @all_followers
   end
 
-  def all_following
-    search ||= GithubSearch.new(ENV['GITHUB_TOKEN_1'])
+  def all_following(token)
+    search ||= GithubSearch.new(token)
     @all_following = search.following
     @all_following
   end
