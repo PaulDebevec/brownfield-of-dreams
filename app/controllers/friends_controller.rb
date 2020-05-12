@@ -1,5 +1,5 @@
 class FriendsController < ApplicationController
   def create
-    binding.pry
+    current_user.add_friend(params["login"])
   end
 end

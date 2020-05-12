@@ -29,5 +29,8 @@ describe 'User' do
     visit(dashboard_path)
     expect(page).to have_link("Add as Friend")
     click_link("Add as Friend")
+
+    expect(page).to have_content("Friend Added Succesfully")
+    expect(user1.friends.length).to eq(1)
   end
 end
