@@ -47,4 +47,12 @@
     </section>
   </section>
   <% end %>
+  <section class="my_friends">
+    <% if current_user.friends.length != 0%>
+    <h4>My Friends</h4>
+      <%@all_friends.each do |friend| %>
+        <p><%=friend.first_name%> <%=friend.last_name%></p>
+      <%end%>
+    <%end%>
+  </section>
 </section>
