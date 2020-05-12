@@ -110,7 +110,7 @@ describe 'User' do
 
       within '.my_friends' do
         expect(page).to have_content("Fred Rondina")
+        expect(page).to have_content("fredrondina96")
       end
-    save_and_open_page
   end
 end
