@@ -38,4 +38,8 @@ class User < ApplicationRecord
   def self.has_account?(followers_name)
     User.find_by(login: followers_name)
   end
+
+  def add_friend(friends_username)
+    binding.pry
+  end
 end
