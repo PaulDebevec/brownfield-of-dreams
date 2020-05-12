@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_183355) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token", default: "No Key"
-    t.string "login"
+    t.string "login", default: "No Login"
     t.index ["email"], name: "index_users_on_email"
   end
 
