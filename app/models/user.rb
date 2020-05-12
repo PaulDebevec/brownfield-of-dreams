@@ -42,6 +42,8 @@ class User < ApplicationRecord
   end
 
   def add_friend(friends_username)
-    binding.pry
+    friend = User.find_by(login: friends_username)
+    Friend.create(user_id: id, user_friend_id: friend.id)
+    Friend.create(user_id: friend.id, user_friend_id: id)
   end
 end
