@@ -58,4 +58,13 @@ class User < ApplicationRecord
       end
     true
   end
+
+  def load_friends
+    unless self.friends.length == 0
+      all_friends = self.friends.map do |friend|
+        User.find(friend.user_friend_id)
+      end
+    return all_friends
+    end
+  end
 end
