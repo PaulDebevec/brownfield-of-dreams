@@ -51,7 +51,7 @@
     <% if current_user.friends.length != 0%>
     <h4>My Friends</h4>
       <%@all_friends.each do |friend| %>
-        <p><%=friend.first_name%> <%=friend.last_name%></p>
+        <p><%=friend.first_name%> <%=friend.last_name%> aka <%=friend.login%></p>
       <%end%>
     <%end%>
   </section>
