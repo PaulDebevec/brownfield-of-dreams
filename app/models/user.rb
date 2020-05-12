@@ -46,4 +46,16 @@ class User < ApplicationRecord
     Friend.create(user_id: id, user_friend_id: friend.id)
     Friend.create(user_id: friend.id, user_friend_id: id)
   end
+
+  def valid_friend?(potential_friend)
+    new_friend = User.find_by(login: potential_friend.name)
+      if self.friends.length == 0
+        true
+      else
+        self.friends.each do |current_friend|
+          return false if current_friend.user_friend_id == new_friend.id
+        end
+      end
+    true
+  end
 end
