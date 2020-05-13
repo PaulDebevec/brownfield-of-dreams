@@ -42,7 +42,7 @@ Launch the Heroku [app](https://fp-brownfield.herokuapp.com/)
 
 ### Schema Design
 
-![alt text](app/assets/images/scheme.png)
+![alt text](app/assets/images/schema.png)
 
 ## Getting Started
 
