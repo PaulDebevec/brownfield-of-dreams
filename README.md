@@ -1,13 +1,9 @@
-[![Build Status](https://travis-ci.com/adumortier/brownfield-of-dreams.svg?branch=master)](https://travis-ci.com/github/adumortier/brownfield-of-dreams)
-[![codecov](https://codecov.io/gh/adumortier/brownfield-of-dreams/branch/master/graph/badge.svg)](https://codecov.io/gh/adumortier/brownfield-of-dreams)
-
 # Brownfield Of Dreams
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Demo](#demo)
   * [Built With](#built-with)
   * [Schema Design](#schema-design)
 * [Getting Started](#getting-started)
@@ -19,38 +15,34 @@
 
 ## About the Project
 
-Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. 
+Brownfield Of Dreams is a Ruby on Rails brownfield project used to import YouTube videos and playlists for online learning. 
 
-We worked for a period of ten days on this paired project to implement new functionalities to the platform: 
+This was a paired project for Turing School of Software & Design Module 3.
 
-* external API consumption (GitHub)
-* OAuth functionality (through GitHub)
-* email activation of accounts
-* email invitation of GitHub users
+* Github API consumption
+* GitHub Oauth implementation
 * bookmarking of video segments
-* addition of other users as friends. 
+* functionality to add friends
 
 We also set up Continuous Integration using Travis CI. 
 
-Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
+Launch the Heroku [app](https://fp-brownfield.herokuapp.com/)
 
-### Demo
-
-![alt text](app/assets/images/demo.gif)
 
 ### Built With:
 
-* [Stimulus](https://github.com/stimulusjs/stimulus)
-* [will_paginate](https://github.com/mislav/will_paginate)
-* [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
+* Rails 5.2.4.2
+* Ruby 2.5.3
+* Postgres Database
+* Faraday
 * [webpacker](https://github.com/rails/webpacker)
 * [vcr](https://github.com/vcr/vcr)
 * [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
-* [chromedriver-helper](http://chromedriver.chromium.org/)
+
 
 ### Schema Design
 
-![alt text](app/assets/images/scheme_brownfield.png)
+![alt text](app/assets/images/scheme.png)
 
 ## Getting Started
 
