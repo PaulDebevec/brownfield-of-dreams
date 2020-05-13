@@ -55,18 +55,12 @@ You will also need a GitHub Application `client_id` and `client_secret` and defi
   
 To setup Brownfield Of Dreams locally, run the following commands:
 ```
-$ git clone https://github.com/adumortier/brownfield-of-dreams
+$ git clone git@github.com:PaulDebevec/brownfield-of-dreams.git
+# OR if using HTTPS - $ git clone https://github.com/PaulDebevec/brownfield-of-dreams.git 
 $ cd brownfield-of-dreams
 $ bundle install
 $ bundle update
 $ rails db:{drop,create,migrate,seed}
-```
-
-Install node packages for stimulus
-```
-$ brew install node
-$ brew install yarn
-$ yarn add stimulus
 ```
 
 Set up the database
@@ -99,6 +93,6 @@ The original repository of the `BrownFieldOfDreams` project can be found [here](
 
 ## Contributors
 
-[Alexis Dumortier](https://github.com/adumortier)
+[Fred Rondina](https://github.com/fredrondina96)
 
 [Paul Debevec](https://github.com/PaulDebevec) 
