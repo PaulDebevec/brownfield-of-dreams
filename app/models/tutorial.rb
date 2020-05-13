@@ -31,4 +31,19 @@ class Tutorial < ApplicationRecord
     end
     return playlist_data
   end
+
+  def import_videos(playlist_id)
+    service = Faraday.new(url: "https://www.googleapis.com")
+    videos = service.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{playlist_id}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50")
+    @videos_raw = JSON.parse(videos.body, symbolize_names: true)
+      @videos_raw[:items].each_with_index do |video, index|
+        video_data = Hash.new
+        video_data["title"] = video[:snippet][:title]
+        video_data["description"] = video[:snippet][:description]
+        video_data["video_id"] =  video[:snippet][:resourceId][:videoId]
+        video_data["thumbnail"] = video[:snippet][:thumbnails][:medium][:url]
+        video_data["position"] = (index+1)
+        self.videos.create!(video_data)
+      end
+  end
 end
