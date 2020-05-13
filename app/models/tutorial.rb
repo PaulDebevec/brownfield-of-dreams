@@ -14,7 +14,9 @@ class Tutorial < ApplicationRecord
 
   def self.load_playlist_data(playlist_id)
     service = Faraday.new(url: "https://www.googleapis.com")
-    playlist_info = service.get("/youtube/v3/playlists?part=snippet&id=#{playlist_id}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50")
+    part = "?part=snippet&id=#{playlist_id}"
+    key = "&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50"
+    playlist_info = service.get("/youtube/v3/playlists#{part}#{key}")
     @playlist = JSON.parse(playlist_info.body, symbolize_names: true)
 
     playlist_data = Hash.new
@@ -23,18 +25,24 @@ class Tutorial < ApplicationRecord
       return false
     else
       playlist_data["title"] = @playlist[:items].first[:snippet][:title]
-      playlist_data["description"] = @playlist[:items].first[:snippet][:description]
-      playlist_data["thumbnail"] =  @playlist[:items].first[:snippet][:thumbnails][:standard][:url]
+      playlist_data["description"] = @playlist[:items]
+                                .first[:snippet][:description]
+      playlist_data["thumbnail"] =  @playlist[:items]
+                                .first[:snippet][:thumbnails][:standard][:url]
       playlist_data["playlist_id"] = @playlist[:items].first[:id]
       playlist_data["classroom"] = false
-      playlist_data["description"] = "No Description Available" if playlist_data["description"] = ""
+      if playlist_data["description"] = ""
+        playlist_data["description"] = "No Description Available"
+      end
     end
     return playlist_data
   end
 
   def import_videos(playlist_id)
     service = Faraday.new(url: "https://www.googleapis.com")
-    videos = service.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{playlist_id}&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50")
+    part = "?part=snippet&playlistId=#{playlist_id}"
+    key = "&key=#{ENV["YOUTUBE_API_KEY"]}&maxResults=50"
+    videos = service.get("/youtube/v3/playlistItems#{part}#{key}")
     @videos_raw = JSON.parse(videos.body, symbolize_names: true)
       @videos_raw[:items].each_with_index do |video, index|
         video_data = Hash.new
