@@ -25,6 +25,7 @@ SimpleCov.start do
   add_filter 'app/channels'
   add_filter 'app/helpers'
   add_filter 'app/jobs'
+  add_filter 'app/controllers/admin/api/v1/tutorial_sequencer_controller.rb'
 end
 
 Shoulda::Matchers.configure do |config|

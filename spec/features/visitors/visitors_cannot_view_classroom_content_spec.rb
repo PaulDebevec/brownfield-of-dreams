@@ -24,14 +24,16 @@ describe 'Visitor' do
 
       visit root_path
 
-      expect(page).to_not have_content(tutorial3.title)
-      expect(page).to_not have_content(tutorial3.description)
+      within "#tutorial-#{tutorial3.id}" do
+        expect(page).to have_content('Classroom Content')
+      end
 
-      within(first('.tutorials')) do
-        expect(page).to have_css('.tutorial')
-        expect(page).to have_css('.tutorial-description')
+      within "#tutorial-#{tutorial1.id}" do
         expect(page).to have_content(tutorial1.title)
         expect(page).to have_content(tutorial1.description)
+      end
+
+      within "#tutorial-#{tutorial2.id}" do
         expect(page).to have_content(tutorial2.title)
         expect(page).to have_content(tutorial2.description)
       end
