@@ -38,6 +38,7 @@ class Tutorial < ApplicationRecord
     @videos_raw = JSON.parse(videos.body, symbolize_names: true)
       @videos_raw[:items].each_with_index do |video, index|
         video_data = Hash.new
+        next if video[:snippet][:title] == "Private video"
         video_data["title"] = video[:snippet][:title]
         video_data["description"] = video[:snippet][:description]
         video_data["video_id"] =  video[:snippet][:resourceId][:videoId]
