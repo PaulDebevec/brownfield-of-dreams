@@ -20,37 +20,15 @@ class Admin::TutorialsController < Admin::BaseController
   def new_import; end
 
   def import
-    service = Faraday.new(url: 'https://www.googleapis.com')
-    videos = service.get("/youtube/v3/playlistItems?part=snippet&playlistId=#{params[:playlist_id]}&key=#{ENV['YOUTUBE_API_KEY']}&maxResults=50")
-    playlist_info = service.get("/youtube/v3/playlists?part=snippet&id=#{params[:playlist_id]}&key=#{ENV['YOUTUBE_API_KEY']}&maxResults=50")
-    @videos_raw = JSON.parse(videos.body, symbolize_names: true)
-    @playlist = JSON.parse(playlist_info.body, symbolize_names: true)
-
-    playlist_data = {}
-
-    if @playlist[:items].first.nil?
-      flash[:error] = 'Invalid Playlist ID, Try Again'
-      redirect_to '/admin/tutorials/import'
-    else
-      playlist_data['title'] = @playlist[:items].first[:snippet][:title]
-      playlist_data['description'] = @playlist[:items].first[:snippet][:description]
-      playlist_data['thumbnail'] = @playlist[:items].first[:snippet][:thumbnails][:standard][:url]
-      playlist_data['playlist_id'] = @playlist[:items].first[:id]
-      playlist_data['classroom'] = false
-      if playlist_data['description'] = ''
-        playlist_data['description'] = 'No Description Available'
-      end
-
-      @new_playlist = Tutorial.create!(playlist_data)
-
-      @videos_raw[:items].each_with_index do |video, index|
-        video_data = {}
-        video_data['title'] = video[:snippet][:title]
-        video_data['description'] = video[:snippet][:description]
-        video_data['video_id'] =  video[:snippet][:resourceId][:videoId]
-        video_data['thumbnail'] = video[:snippet][:thumbnails][:medium][:url]
-        video_data['position'] = (index + 1)
-        @new_playlist.videos.create!(video_data)
+    tutorial_attributes = Tutorial.load_playlist_data(params[:playlist_id])
+      if tutorial_attributes == false
+        flash[:error] = "Invalid Playlist ID, Try Again"
+        redirect_to "/admin/tutorials/import"
+      else
+        @new_playlist = Tutorial.create!(tutorial_attributes)
+        @new_playlist.import_videos(params[:playlist_id])
+        flash[:success] = "Successfully created tutorial #{view_context.link_to 'View it here', "/tutorials/#{@new_playlist.id}"}"
+        redirect_to admin_dashboard_path
       end
       flash[:success] = "Successfully created tutorial #{view_context.link_to 'View it here', "/tutorials/#{@new_playlist.id}"}"
       redirect_to admin_dashboard_path
