@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'vister can create an account', :js do
+describe 'vister can create an account' do
   it ' visits the home page' do
     email = 'jimbob@aol.com'
     first_name = 'Jim'
@@ -34,3 +34,27 @@ describe 'vister can create an account', :js do
     expect(page).to_not have_content('Sign In')
   end
 end
+
+describe 'When I attempt to register with an email that already exists' do
+  it 'it displays a flash message' do
+    user = User.create( email: 'Pablo@example.com',
+      first_name: 'Pablo',
+      last_name: 'D',
+      password: 'password')
+
+      visit '/'
+
+      click_on 'Register'
+      expect(current_path).to eq(register_path)
+
+      fill_in 'user[email]', with: 'Pablo@example.com'
+      fill_in 'user[first_name]', with: 'Jim'
+      fill_in 'user[last_name]', with: 'Bob'
+      fill_in 'user[password]', with: 'password'
+      fill_in 'user[password_confirmation]', with: 'password'
+
+      click_on 'Create Account'
+
+      expect(page).to have_content('Username already exists')
+    end
+  end

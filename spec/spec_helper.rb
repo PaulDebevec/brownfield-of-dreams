@@ -1,3 +1,14 @@
+require 'webmock/rspec'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.hook_into :webmock
+   c.filter_sensitive_data('<GITHUB-API-KEY-1>') { ENV['GITHUB_TOKEN_1'] }
+   c.filter_sensitive_data('<GITHUB-API-KEY-2>') { ENV['GITHUB_TOKEN_2'] }
+   c.filter_sensitive_data('<YOUTUBE_API_KEY>') { ENV['YOUTUBE_API_KEY'] }
+end
+
 RSpec.configure do |config|
 
   config.before(:suite) do

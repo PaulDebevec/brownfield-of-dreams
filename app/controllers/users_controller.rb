@@ -3,9 +3,7 @@ class UsersController < ApplicationController
       @all_friends = current_user.load_friends if current_user
   end
 
-  def new
-    @user = User.new
-  end
+  def new; end
 
   def create
     user = User.create(user_params)

@@ -1,0 +1,880 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&maxResults=50&part=snippet&playlistId=PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 11 May 2020 22:04:41 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#playlistItemListResponse",
+          "etag": "3FUuMg_OEYbx6LLpfgbfrlEnzPE",
+          "items": [
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "kEwHfNUIYO-vGpp1mYtY6ZbheLI",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy41NkI0NEY2RDEwNTU3Q0M2",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:05:57Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - BFG Division",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. All rights belong to ZeniMax & id, no infringement intended.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/pNkQMtZAMAw/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/pNkQMtZAMAw/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/pNkQMtZAMAw/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/pNkQMtZAMAw/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/pNkQMtZAMAw/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 0,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "pNkQMtZAMAw"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "mHQWAAXxSh5XOTPkQRy2cK-pgcY",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy4yODlGNEE0NkRGMEEzMEQy",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:06Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Rip & Tear",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 1,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "a6BbvCC0VI0"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "KwWRWX4cM-KFEkcLQRodO9YM94A",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy4wMTcyMDhGQUE4NTIzM0Y5",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:10Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Flesh & Metal",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/LhIS4FdS7co/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/LhIS4FdS7co/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/LhIS4FdS7co/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/LhIS4FdS7co/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/LhIS4FdS7co/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 2,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "LhIS4FdS7co"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "mnQs4NwDmwB22w7OEOlAFqCRNpY",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy41MjE1MkI0OTQ2QzJGNzNG",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:25Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Ultraviolence",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/2Vn1Q-S7sWg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/2Vn1Q-S7sWg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/2Vn1Q-S7sWg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/2Vn1Q-S7sWg/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/2Vn1Q-S7sWg/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 3,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "2Vn1Q-S7sWg"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "GpMl8HMPDJn1_W1tsXpYmtHkQcI",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy4wOTA3OTZBNzVEMTUzOTMy",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:29Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Lazarus Combat (Skullhacker)",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the proper names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/k6PsU-b2UvI/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/k6PsU-b2UvI/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/k6PsU-b2UvI/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/k6PsU-b2UvI/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/k6PsU-b2UvI/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 4,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "k6PsU-b2UvI"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "oH1Uiy-RTaqviyybXuKK0EquB84",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy4xMkVGQjNCMUM1N0RFNEUx",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:33Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Argent Combat",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/JNRCA1hbvQk/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/JNRCA1hbvQk/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/JNRCA1hbvQk/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/JNRCA1hbvQk/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/JNRCA1hbvQk/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 5,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "JNRCA1hbvQk"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "IN8mT0lispSqQlnx0Ha5cfHmRT8",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy41MzJCQjBCNDIyRkJDN0VD",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:39Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Mastermind",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis is the last track I will be ripping for DOOM, thanks so much for the views! I encourage you to purchase the OST and support Mick Gordon once it is released. :D\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the proper names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 6,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "HwY6kIncUtM"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "272OAL9fygxwmtJIyf0Sq9R296c",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy5DQUNERDQ2NkIzRUQxNTY1",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:43Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Welcome to Hell",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/LrcqbVJVgFk/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/LrcqbVJVgFk/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/LrcqbVJVgFk/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/LrcqbVJVgFk/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/LrcqbVJVgFk/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 7,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "LrcqbVJVgFk"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "YUpmMbEl1nfP36JzKfrRrLX-o6s",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy45NDk1REZENzhEMzU5MDQz",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:46Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - At DOOM's Gate",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/j05hzwQf8pA/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/j05hzwQf8pA/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/j05hzwQf8pA/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/j05hzwQf8pA/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/j05hzwQf8pA/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 8,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "j05hzwQf8pA"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "MFObg482z1xPf6YZdBzqn_Blhw4",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy5GNjNDRDREMDQxOThCMDQ2",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:50Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Main Menu",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/zRkA1xYBZBQ/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/zRkA1xYBZBQ/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/zRkA1xYBZBQ/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/zRkA1xYBZBQ/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/zRkA1xYBZBQ/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 9,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "zRkA1xYBZBQ"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "c4gqCmtZj2lJ8SA6sBmL72Pq9ZY",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy40NzZCMERDMjVEN0RFRThB",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:53Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Titan's Realm",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the proper names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/VJT0Xh5ZrOg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/VJT0Xh5ZrOg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/VJT0Xh5ZrOg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/VJT0Xh5ZrOg/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/VJT0Xh5ZrOg/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 10,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "VJT0Xh5ZrOg"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "UipxRvDkck9uWSlD-o0aH0diWmE",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy5EMEEwRUY5M0RDRTU3NDJC",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:06:59Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Message From Dr. Samuel Hayden/Title Drop",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/d7zde6R0vEc/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/d7zde6R0vEc/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/d7zde6R0vEc/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/d7zde6R0vEc/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/d7zde6R0vEc/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 11,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "d7zde6R0vEc"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "98kFzQ_Sfm5k90E5b9lxLROaQfU",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy4zMDg5MkQ5MEVDMEM1NTg2",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:07:14Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - VEGA Processing",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nRe-uploaded this track, increased the decibels by a bit so it is a tad louder.\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/-3SCUu1wfJQ/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/-3SCUu1wfJQ/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/-3SCUu1wfJQ/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/-3SCUu1wfJQ/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/-3SCUu1wfJQ/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 12,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "-3SCUu1wfJQ"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "qQRSykavhLlAic2pLobr92nVt50",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy41Mzk2QTAxMTkzNDk4MDhF",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:24:48Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Mastermind",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis is the last track I will be ripping for DOOM, thanks so much for the views! I encourage you to purchase the OST and support Mick Gordon once it is released. :D\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the proper names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/HwY6kIncUtM/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 13,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "HwY6kIncUtM"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "LODGnedZkc8dulyGNqT1J8a2X1g",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy5EQUE1NTFDRjcwMDg0NEMz",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:25:04Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - Lazarus Boss Fight",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nYou can purchase the game here: \nhttp://store.steampowered.com/agecheck/app/379720/\n\nWill add a link to where you can purchase the OST once it becomes available.\n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the proper names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/WvhQmopGPJU/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/WvhQmopGPJU/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/WvhQmopGPJU/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/WvhQmopGPJU/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/WvhQmopGPJU/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 14,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "WvhQmopGPJU"
+                }
+              }
+            },
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "lsQJazFFnQ7azbotY3RE0lqtQaw",
+              "id": "UExJbkZOY3ZwTFF2Ny1fQ3pUVkhqc3lJQnNNUW1lcmRDRy41QTY1Q0UxMTVCODczNThE",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:25:13Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "DOOM (2016) OST - The Burning Hells",
+                "description": "Support Mick Gordon and buy the official release using the links below:\n\niTunes:\nhttps://itunes.apple.com/us/album/doom-original-game-soundtrack/id1157733728\n\nGooglePlay:\nhttps://play.google.com/store/music/album/Mick_Gordon_Doom_Original_Game_Soundtrack?id=Bprrws2k246zctacv56xhlfdz4m\n\nSpotify:\nhttps://play.spotify.com/album/0KQyC28P9808r0oKKNgHvp\n\nThis tracked is ripped from the game files. The music for DOOM is composed by the brilliant Mick Gordon, who also did the score to Wolfenstein & Killer Instinct. \n\nAll rights belong to ZeniMax & id, no infringement intended. Some tracks I do not know the title names, so I apologize in advanced for switching around any titles. With the naming, I'm always open for critic or input & appreciate the comment. Let me know of any requests or errors that I made splicing the music together.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/p-drA5_2Vok/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/p-drA5_2Vok/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/p-drA5_2Vok/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/p-drA5_2Vok/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/p-drA5_2Vok/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "playlistId": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+                "position": 15,
+                "resourceId": {
+                  "kind": "youtube#video",
+                  "videoId": "p-drA5_2Vok"
+                }
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 16,
+            "resultsPerPage": 50
+          }
+        }
+    http_version: null
+  recorded_at: Mon, 11 May 2020 22:04:41 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlists?id=PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG&key=<YOUTUBE_API_KEY>&maxResults=50&part=snippet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 11 May 2020 22:04:43 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#playlistListResponse",
+          "etag": "H2apFfD0foqjQ9RujClStGXCqRU",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 50
+          },
+          "items": [
+            {
+              "kind": "youtube#playlist",
+              "etag": "6DktyzdvsNumZ-3t36JOaio43RM",
+              "id": "PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG",
+              "snippet": {
+                "publishedAt": "2017-02-19T19:05:57Z",
+                "channelId": "UC7RIjlxfF360GJkyOiv2dgQ",
+                "title": "Doom 2016 OST",
+                "description": "",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/a6BbvCC0VI0/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "BronyJackVideos",
+                "localized": {
+                  "title": "Doom 2016 OST",
+                  "description": ""
+                }
+              }
+            }
+          ]
+        }
+    http_version: null
+  recorded_at: Mon, 11 May 2020 22:04:43 GMT
+recorded_with: VCR 5.1.0
