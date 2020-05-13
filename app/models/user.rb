@@ -49,22 +49,16 @@ class User < ApplicationRecord
 
   def valid_friend?(potential_friend)
     new_friend = User.find_by(login: potential_friend.name)
-    if friends.empty?
-      true
-    else
-      friends.each do |current_friend|
-        return false if current_friend.user_friend_id == new_friend.id
-      end
+    friends.each do |current_friend|
+      return false if current_friend.user_friend_id == new_friend.id
     end
     true
   end
 
   def load_friends
-    unless friends.empty?
-      all_friends = friends.map do |friend|
-        User.find(friend.user_friend_id)
-      end
-      all_friends
+    all_friends = friends.map do |friend|
+      User.find(friend.user_friend_id)
     end
+    all_friends
   end
 end
