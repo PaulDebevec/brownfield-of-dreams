@@ -5,21 +5,21 @@ class GithubSearch
   end
 
   def repositories
-    @repositories ||= @github_service.repository_data.map do |repo_params|
-      Repository.new({name: repo_params['name'], repo_url: repo_params['html_url']})
+    @repositories ||= @github_service.repository_data.map do |repo_par|
+      Repository.new({ name: repo_par['name'], repo_url: repo_par['html_url'] })
     end
     @repositories[0..4]
   end
 
   def followers
-    @followers ||= @github_service.follower_data.map do |follower_params|
-      Follower.new({login: follower_params['login'], html_url: follower_params['html_url']})
+    @followers ||= @github_service.follower_data.map do |fr_par|
+      Follower.new({ login: fr_par['login'], html_url: fr_par['html_url'] })
     end
   end
 
   def following
-    @following ||= @github_service.following_data.map do |following_params|
-      Following.new({name: following_params['login'], html_url: following_params['html_url']})
+    @following ||= @github_service.following_data.map do |fg_par|
+      Following.new({ name: fg_par['login'], html_url: fg_par['html_url'] })
     end
   end
 end

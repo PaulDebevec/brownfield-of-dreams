@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 13 May 2020 19:24:11 GMT
+      - Wed, 13 May 2020 19:53:25 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -37,9 +37,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -99,7 +99,7 @@ http_interactions:
           ]
         }
     http_version: null
-  recorded_at: Wed, 13 May 2020 19:24:11 GMT
+  recorded_at: Wed, 13 May 2020 19:53:25 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&maxResults=50&part=snippet&playlistId=PLInFNcvpLQv7-_CzTVHjsyIBsMQmerdCG
@@ -125,7 +125,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 13 May 2020 19:24:11 GMT
+      - Wed, 13 May 2020 19:53:25 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -137,9 +137,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -147,7 +147,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#playlistItemListResponse",
-          "etag": "UJAhPt-Bgjh_sYj2RKUdv0rimy0",
+          "etag": "C1OzCgfLzrbNYZkz4PfTlKzI908",
           "items": [
             {
               "kind": "youtube#playlistItem",
@@ -876,5 +876,5 @@ http_interactions:
           }
         }
     http_version: null
-  recorded_at: Wed, 13 May 2020 19:24:11 GMT
+  recorded_at: Wed, 13 May 2020 19:53:25 GMT
 recorded_with: VCR 5.1.0

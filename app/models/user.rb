@@ -6,17 +6,17 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :password, presence: true
   validates :first_name, presence: true
-  validates_presence_of :token
+  validates :token, presence: true
   enum role: { default: 0, admin: 1 }
   has_secure_password
 
   def bookmarks_list
     Video.select('videos.*, tutorials.id as tutorial_id, user_videos.user_id')
-      .joins(:tutorial)
-      .joins(:user_videos)
-      .where(user_videos: {user_id: self.id})
-      .order(:tutorial_id)
-      .order(:position)
+         .joins(:tutorial)
+         .joins(:user_videos)
+         .where(user_videos: { user_id: id })
+         .order(:tutorial_id)
+         .order(:position)
   end
 
   def top_5_repos(token)
@@ -37,7 +37,7 @@ class User < ApplicationRecord
     @all_following
   end
 
-  def self.has_account?(followers_name)
+  def self.account?(followers_name)
     User.find_by(login: followers_name)
   end
 
@@ -49,22 +49,16 @@ class User < ApplicationRecord
 
   def valid_friend?(potential_friend)
     new_friend = User.find_by(login: potential_friend.name)
-      if self.friends.length == 0
-        true
-      else
-        self.friends.each do |current_friend|
-          return false if current_friend.user_friend_id == new_friend.id
-        end
-      end
+    friends.each do |current_friend|
+      return false if current_friend.user_friend_id == new_friend.id
+    end
     true
   end
 
   def load_friends
-    unless self.friends.length == 0
-      all_friends = self.friends.map do |friend|
-        User.find(friend.user_friend_id)
-      end
-    return all_friends
+    all_friends = friends.map do |friend|
+      User.find(friend.user_friend_id)
     end
+    all_friends
   end
 end

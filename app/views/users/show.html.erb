@@ -30,7 +30,7 @@
       <h4>Followers</h4>
       <% current_user.all_followers(current_user.token).each do |follower| %>
         <p class="follower-name"><%= link_to follower.name, follower.html_url %></p>
-        <% if current_user.token != "No Key" && !User.has_account?(follower.name).nil? && current_user.valid_friend?(follower)%>
+        <% if current_user.token != "No Key" && !User.account?(follower.name).nil? && current_user.valid_friend?(follower)%>
             <%= link_to "Add as Friend", friends_new_path(:login => "#{follower.name}"), method: 'post'%>
         <%end%>
     <%end%>
@@ -40,7 +40,7 @@
       <h4>Following</h4>
       <% current_user.all_following(current_user.token).each do |following| %>
         <p class="following-name"><%= link_to following.name, following.html_url %></p>
-        <% if current_user.token != "No Key" && !User.has_account?(following.name).nil? && current_user.valid_friend?(following)%>
+        <% if current_user.token != "No Key" && !User.account?(following.name).nil? && current_user.valid_friend?(following)%>
             <%= link_to "Add as Friend", friends_new_path(:login => "#{following.name}"), method: 'post'%>
         <%end%>
       <% end %>
@@ -48,11 +48,13 @@
   </section>
   <% end %>
   <section class="my_friends">
-    <% if current_user.friends.length != 0%>
     <h4>My Friends</h4>
-      <%@all_friends.each do |friend| %>
-        <p><%=friend.first_name%> <%=friend.last_name%> aka <%=friend.login%></p>
+    <% if current_user.friends.length != 0%>
+        <%@all_friends.each do |friend| %>
+          <p><%=friend.first_name%> <%=friend.last_name%> aka <%=friend.login%></p>
+        <%end%>
+        <% else %>
+        <h4>You have no friends</h4>
       <%end%>
-    <%end%>
   </section>
 </section>
