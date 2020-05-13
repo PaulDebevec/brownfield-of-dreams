@@ -37,7 +37,7 @@ class User < ApplicationRecord
     @all_following
   end
 
-  def self.has_account?(followers_name)
+  def self.account?(followers_name)
     User.find_by(login: followers_name)
   end
 
