@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def show; end
+  def show
+      @all_friends = current_user.load_friends if current_user
+  end
 
   def new; end
 
